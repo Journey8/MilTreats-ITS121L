@@ -1,0 +1,223 @@
+/* =========================================
+   MILTREAT TRAVEL - GLOBAL STYLESHEET
+   Developed by: Xavier Pedregosa & Team
+   ========================================= */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+
+/* RUBRIC: CSS Variables (For easy theming) */
+:root {
+    --primary-cyan: #00bcd4;    /* Main Brand Color */
+    --dark-blue: #003c5f;       /* Contrast Color */
+    --accent-yellow: #ffeb3b;   /* Call to Action */
+    --text-dark: #333333;
+    --text-light: #f8f9fa;
+    --shadow-soft: 0 10px 30px rgba(0,0,0,0.1); /* RUBRIC: CSS Shadow Effects */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+
+/* =========================================
+   NAVIGATION (Bootstrap Override)
+   ========================================= */
+/* RUBRIC: CSS Gradients & Navigation Bar */
+.navbar {
+    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-cyan) 100%);
+    padding: 1rem 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text-light) !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: rgba(255,255,255,0.8) !important; /* RUBRIC: CSS Colors (rgba) */
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--accent-yellow) !important;
+    transform: translateY(-2px);
+}
+
+/* RUBRIC: CSS Dropdowns */
+.dropdown-menu {
+    border: none;
+    border-radius: 0 0 10px 10px; /* RUBRIC: CSS Rounded Corners */
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+}
+
+.dropdown-item:hover {
+    background-color: var(--primary-cyan);
+    color: white;
+}
+
+/* =========================================
+   HERO & HEADERS
+   ========================================= */
+/* RUBRIC: CSS Multiple Backgrounds */
+.page-header {
+    background: linear-gradient(rgba(0, 60, 95, 0.7), rgba(0, 188, 212, 0.7)), url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    color: white;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* =========================================
+   COMPONENTS (Cards, Buttons, Etc)
+   ========================================= */
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--accent-yellow);
+}
+
+.card-custom {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    background: white;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.4s ease;
+    height: 100%;
+}
+
+/* RUBRIC: CSS Opacity (Hover Effect) */
+.card-custom:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.card-custom img {
+    height: 200px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.card-custom:hover img {
+    opacity: 0.9;
+    transform: scale(1.1);
+}
+
+.btn-brand {
+    background-color: var(--accent-yellow);
+    color: var(--dark-blue);
+    font-weight: 700;
+    border-radius: 30px;
+    padding: 10px 30px;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-brand:hover {
+    background-color: #ffd600;
+    transform: scale(1.05);
+}
+
+/* =========================================
+   SPECIFIC RUBRIC REQUIREMENTS
+   ========================================= */
+
+/* RUBRIC: CSS Float (Used in About Page) */
+.float-wrapper {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow-soft);
+}
+.float-img-left {
+    float: left;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+    width: 40%;
+    border-radius: 10px;
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+/* Clearfix to fix float issues */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* RUBRIC: CSS Attribute Selectors (Used in Contact Form) */
+input[type="text"], input[type="email"], select, textarea {
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px;
+    width: 100%;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus, input[type="email"]:focus {
+    border-color: var(--primary-cyan);
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 188, 212, 0.3);
+}
+
+/* RUBRIC: CSS Border Images (Used in Pricing Promo) */
+.promo-box {
+    border: 10px solid transparent;
+    padding: 30px;
+    text-align: center;
+    margin-top: 30px;
+    border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3ClinearGradient id='g' x1='0' y1='0' x2='100' y2='100'%3E%3Cstop stop-color='%2300bcd4' offset='0'/%3E%3Cstop stop-color='%23ffeb3b' offset='1'/%3E%3C/linearGradient%3E%3Cpath d='M0 0h100v100H0z' stroke='url(%23g)' stroke-width='20'/%3E%3C/svg%3E") 30;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+    background-color: var(--dark-blue);
+    color: white;
+    padding: 60px 0 20px;
+    margin-top: 80px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--accent-yellow);
+    padding-left: 10px;
+}

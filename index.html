@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MilTreat Travel and Tours | Home</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-plane-departure me-2"></i> MilTreat</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="pkgDropdown" role="button" data-bs-toggle="dropdown">Packages</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="packages-domestic.html">Domestic</a></li>
+                            <li><a class="dropdown-item" href="packages-international.html">International</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Rates</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- RUBRIC: Sliding Window / Images (Carousel) -->
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1518173946687-a4c8a98039f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" class="d-block w-100" style="height: 80vh; object-fit: cover; filter: brightness(0.7);">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1 class="display-3 fw-bold text-white">Paradise Awaits</h1>
+                    <p class="fs-4">"We listen, we plan, you enjoy!"</p>
+                    <a href="packages-domestic.html" class="btn btn-brand btn-lg mt-3">Explore Philippines</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" class="d-block w-100" style="height: 80vh; object-fit: cover; filter: brightness(0.7);">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1 class="display-3 fw-bold text-white">Go International</h1>
+                    <p class="fs-4">Experience culture beyond borders.</p>
+                    <a href="packages-international.html" class="btn btn-brand btn-lg mt-3">See World Tours</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- Welcome Section -->
+    <section class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h2 class="section-title text-start">Welcome to MilTreat</h2>
+                <p class="lead text-muted">Your trusted travel partner in Angono, Rizal.</p>
+                <p>Whether you need PSA assistance, a quick getaway to Boracay, or a dream vacation to Japan, MilTreat Travel and Tours is here to handle the details. We specialize in creating hassle-free experiences so you can focus on making memories.</p>
+                <div class="d-flex gap-3 mt-4">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-check-circle text-info fs-3 me-2"></i>
+                        <span>Legit & Registered</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-heart text-info fs-3 me-2"></i>
+                        <span>Customer Focused</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mt-4 mt-md-0">
+                <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="img-fluid rounded-4 shadow" alt="Travel">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h4 class="text-white">MilTreat Travel</h4>
+                    <p>Dama de Noche Street, Angono, Rizal</p>
+                    <p><i class="fas fa-phone me-2"></i> +639457884187</p>
+                    <p><i class="fas fa-envelope me-2"></i> miltreattravelandtours@gmail.com</p>
+                </div>
+                <div class="col-md-4 mb-4 footer-links">
+                    <h4 class="text-white">Sitemap</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="packages-domestic.html">Packages</a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h4 class="text-white">Follow Us</h4>
+                    <div class="d-flex gap-3 fs-4">
+                        <a href="https://www.facebook.com/miltreat" class="text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/miltreat" class="text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@miltreattourservices" class="text-white"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0 small">Developed by: Group 4 AM4 (Mapúa University) | ITS121L Project</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
