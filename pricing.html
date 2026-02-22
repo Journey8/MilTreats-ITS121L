@@ -10,14 +10,24 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><i class="fas fa-plane-departure me-2"></i> MilTreat</a>
+            <a class="navbar-brand" href="index.html"><i class="fas fa-plane-departure me-2 text-warning"></i> MilTreat</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Packages</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="packages-domestic.html">Domestic</a></li>
+                            <li><a class="dropdown-item" href="packages-international.html">International</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link active" href="pricing.html">Rates</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
             </div>
@@ -25,65 +35,92 @@
     </nav>
 
     <header class="page-header">
-        <div class="container">
-            <h1>Service Rates</h1>
-            <p class="lead">Transparent pricing for your peace of mind.</p>
+        <div class="container fade-in">
+            <h1 class="display-4 fw-bold">Service Rates</h1>
+            <p class="lead fs-4">Transparent pricing for your peace of mind.</p>
         </div>
     </header>
 
-    <div class="container mb-5">
-        
+    <main class="container mb-5 fade-in">
         <!-- RUBRIC: HTML Tables -->
-        <div class="table-responsive shadow rounded">
-            <table class="table table-hover table-striped align-middle mb-0">
-                <thead class="bg-primary text-white">
+        <div class="table-responsive shadow-lg rounded-4 bg-white overflow-hidden border">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="text-white" style="background: var(--dark-blue);">
                     <tr>
-                        <th class="py-3 ps-3">Service Type</th>
-                        <th class="py-3">Description</th>
-                        <th class="py-3">Processing Time</th>
-                        <th class="py-3">Price (PHP)</th>
+                        <th class="py-4 ps-4 fw-bold border-0">Service Type</th>
+                        <th class="py-4 fw-bold border-0">Description</th>
+                        <th class="py-4 fw-bold border-0">Processing Time</th>
+                        <th class="py-4 pe-4 fw-bold border-0">Price (PHP)</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="fs-5">
                     <tr>
-                        <td class="ps-3 fw-bold">PSA Birth Certificate</td>
-                        <td>Copy issuance (Security Paper)</td>
-                        <td>3-5 Days</td>
-                        <td class="text-success fw-bold">₱450.00</td>
+                        <td class="ps-4 py-3 fw-bold text-dark">PSA Birth Certificate</td>
+                        <td class="text-muted">Copy issuance (Security Paper)</td>
+                        <td><span class="badge bg-light text-dark border">3-5 Days</span></td>
+                        <td class="text-success fw-bold pe-4">₱450.00</td>
                     </tr>
                     <tr>
-                        <td class="ps-3 fw-bold">PSA CENOMAR</td>
-                        <td>Certificate of No Marriage</td>
-                        <td>3-5 Days</td>
-                        <td class="text-success fw-bold">₱550.00</td>
+                        <td class="ps-4 py-3 fw-bold text-dark">PSA CENOMAR</td>
+                        <td class="text-muted">Certificate of No Marriage</td>
+                        <td><span class="badge bg-light text-dark border">3-5 Days</span></td>
+                        <td class="text-success fw-bold pe-4">₱550.00</td>
                     </tr>
                     <tr>
-                        <td class="ps-3 fw-bold">Passport Renewal</td>
-                        <td>Appointment + Form Filling</td>
-                        <td>DFA Standard</td>
-                        <td class="text-success fw-bold">₱1,500.00</td>
+                        <td class="ps-4 py-3 fw-bold text-dark">Passport Renewal</td>
+                        <td class="text-muted">Appointment + Form Filling</td>
+                        <td><span class="badge bg-info text-white border-0">DFA Standard</span></td>
+                        <td class="text-success fw-bold pe-4">₱1,500.00</td>
                     </tr>
                     <tr>
-                        <td class="ps-3 fw-bold">New Passport</td>
-                        <td>Appointment + Form Filling</td>
-                        <td>DFA Standard</td>
-                        <td class="text-success fw-bold">₱1,500.00</td>
+                        <td class="ps-4 py-3 fw-bold text-dark">New Passport</td>
+                        <td class="text-muted">Appointment + Form Filling</td>
+                        <td><span class="badge bg-info text-white border-0">DFA Standard</span></td>
+                        <td class="text-success fw-bold pe-4">₱1,500.00</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
         <!-- RUBRIC: Border Image Promo Box -->
-        <div class="promo-box">
-            <h3 class="text-uppercase fw-bold">Barkada Promo!</h3>
-            <p class="fs-5">Get <strong>10% OFF</strong> on service fees for groups of 5 or more.</p>
-            <a href="contact.html" class="btn btn-brand">Claim Offer</a>
+        <div class="promo-box rounded-4">
+            <h2 class="text-uppercase fw-bold text-dark mb-3">Barkada Promo!</h2>
+            <p class="fs-4 text-muted mb-4">Get <strong class="text-danger">10% OFF</strong> on service fees for groups of 5 or more.</p>
+            <a href="contact.html" class="btn btn-brand btn-lg">Claim Offer Now</a>
         </div>
-    </div>
+    </main>
 
+    <!-- Standardized Footer -->
     <footer>
-        <div class="container text-center">
-            <p class="mb-0 small">Developed by: Group 4 AM4 (Mapúa University)</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h4 class="text-white mb-4"><i class="fas fa-plane-departure me-2 text-warning"></i>MilTreat Travel</h4>
+                    <p class="text-light opacity-75 mb-2"><i class="fas fa-map-marker-alt me-2"></i> Dama de Noche Street, Angono, Rizal</p>
+                    <p class="text-light opacity-75 mb-2"><i class="fas fa-phone me-2"></i> +639457884187</p>
+                    <p class="text-light opacity-75"><i class="fas fa-envelope me-2"></i> miltreattravelandtours@gmail.com</p>
+                </div>
+                <div class="col-md-4 mb-4 footer-links">
+                    <h4 class="text-white mb-4">Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="packages-domestic.html">Domestic Packages</a>
+                    <a href="packages-international.html">International Packages</a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h4 class="text-white mb-4">Follow Us</h4>
+                    <div class="d-flex gap-3 fs-5 social-icons">
+                        <a href="https://www.facebook.com/miltreat" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/miltreat" class="text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@miltreattourservices" class="text-white"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-light opacity-25 mt-4 mb-4">
+            <div class="text-center">
+                <p class="mb-0 small text-light opacity-75">Developed by: Group 4 AM4 (Mapúa University) | ITS121L Project</p>
+            </div>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

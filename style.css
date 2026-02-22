@@ -1,56 +1,79 @@
 /* =========================================
    MILTREAT TRAVEL - GLOBAL STYLESHEET
-   Developed by: Xavier Pedregosa & Team
+   Developed by: Group 4 AM4 (Mapúa University)
    ========================================= */
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap');
 
-/* RUBRIC: CSS Variables (For easy theming) */
+/* RUBRIC: CSS Variables */
 :root {
-    --primary-cyan: #00bcd4;    /* Main Brand Color */
-    --dark-blue: #003c5f;       /* Contrast Color */
-    --accent-yellow: #ffeb3b;   /* Call to Action */
-    --text-dark: #333333;
+    --primary-cyan: #00bcd4;    
+    --dark-blue: #003c5f;       
+    --accent-yellow: #ffeb3b;   
+    --text-dark: #2d3436;
     --text-light: #f8f9fa;
-    --shadow-soft: 0 10px 30px rgba(0,0,0,0.1); /* RUBRIC: CSS Shadow Effects */
+    --shadow-soft: 0 12px 24px rgba(0,0,0,0.08); 
+    --shadow-hover: 0 20px 40px rgba(0,0,0,0.15);
 }
 
 body {
     font-family: 'Open Sans', sans-serif;
     color: var(--text-dark);
-    line-height: 1.6;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    line-height: 1.7;
+    background-color: #fcfcfc;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     color: var(--dark-blue);
 }
 
 /* =========================================
-   NAVIGATION (Bootstrap Override)
+   ANIMATIONS
    ========================================= */
-/* RUBRIC: CSS Gradients & Navigation Bar */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* =========================================
+   NAVIGATION 
+   ========================================= */
+/* RUBRIC: CSS Gradients */
 .navbar {
     background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-cyan) 100%);
     padding: 1rem 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .navbar-brand {
-    font-weight: 700;
+    font-weight: 800;
     font-size: 1.5rem;
     color: var(--text-light) !important;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
 }
 
 .nav-link {
-    color: rgba(255,255,255,0.8) !important; /* RUBRIC: CSS Colors (rgba) */
+    color: rgba(255,255,255,0.7) !important; /* RUBRIC: rgba colors */
     font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
     transition: all 0.3s ease;
+    margin: 0 5px;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -58,12 +81,19 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-2px);
 }
 
-/* RUBRIC: CSS Dropdowns */
+/* RUBRIC: CSS Dropdowns & Rounded Corners */
 .dropdown-menu {
     border: none;
-    border-radius: 0 0 10px 10px; /* RUBRIC: CSS Rounded Corners */
+    border-radius: 0 0 12px 12px; 
     box-shadow: var(--shadow-soft);
+    padding: 0;
     overflow: hidden;
+}
+
+.dropdown-item {
+    padding: 12px 20px;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
 .dropdown-item:hover {
@@ -72,27 +102,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* =========================================
-   HERO & HEADERS
+   HEADERS & HERO
    ========================================= */
 /* RUBRIC: CSS Multiple Backgrounds */
 .page-header {
-    background: linear-gradient(rgba(0, 60, 95, 0.7), rgba(0, 188, 212, 0.7)), url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background: linear-gradient(rgba(0, 60, 95, 0.85), rgba(0, 188, 212, 0.85)), url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
     background-position: center;
-    padding: 100px 0;
+    background-attachment: fixed; /* Parallax effect */
+    padding: 120px 0 80px;
     color: white;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
+    box-shadow: inset 0 -10px 20px rgba(0,0,0,0.05);
 }
 
-/* =========================================
-   COMPONENTS (Cards, Buttons, Etc)
-   ========================================= */
 .section-title {
     text-align: center;
     margin-bottom: 3rem;
     position: relative;
     padding-bottom: 15px;
+    font-weight: 800;
 }
 
 .section-title::after {
@@ -101,123 +131,157 @@ h1, h2, h3, h4, h5, h6 {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
+    width: 60px;
     height: 4px;
     background: var(--accent-yellow);
+    border-radius: 2px;
 }
 
+/* =========================================
+   CARDS & BUTTONS
+   ========================================= */
 .card-custom {
     border: none;
-    border-radius: 15px;
+    border-radius: 16px;
     overflow: hidden;
     background: white;
     box-shadow: var(--shadow-soft);
-    transition: all 0.4s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     height: 100%;
 }
 
-/* RUBRIC: CSS Opacity (Hover Effect) */
+/* RUBRIC: CSS Opacity & Shadows */
 .card-custom:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    box-shadow: var(--shadow-hover);
 }
 
 .card-custom img {
-    height: 200px;
+    height: 220px;
+    width: 100%;
     object-fit: cover;
     transition: 0.5s;
 }
 
 .card-custom:hover img {
-    opacity: 0.9;
-    transform: scale(1.1);
+    opacity: 0.85;
+    transform: scale(1.08);
 }
 
 .btn-brand {
     background-color: var(--accent-yellow);
     color: var(--dark-blue);
     font-weight: 700;
-    border-radius: 30px;
-    padding: 10px 30px;
+    border-radius: 50px; /* Pill shape */
+    padding: 12px 30px;
     border: none;
     transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(255, 235, 59, 0.4);
 }
 
 .btn-brand:hover {
-    background-color: #ffd600;
-    transform: scale(1.05);
+    background-color: #fbc531;
+    color: var(--dark-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(255, 235, 59, 0.6);
 }
 
 /* =========================================
    SPECIFIC RUBRIC REQUIREMENTS
    ========================================= */
 
-/* RUBRIC: CSS Float (Used in About Page) */
+/* RUBRIC: CSS Float (About Page) */
 .float-wrapper {
     background: white;
-    padding: 2rem;
-    border-radius: 15px;
+    padding: 3rem;
+    border-radius: 20px;
     box-shadow: var(--shadow-soft);
 }
+
 .float-img-left {
     float: left;
-    margin-right: 2rem;
-    margin-bottom: 1rem;
-    width: 40%;
-    border-radius: 10px;
-    border: 5px solid #fff;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    margin-right: 2.5rem;
+    margin-bottom: 1.5rem;
+    width: 45%;
+    border-radius: 15px;
+    border: 8px solid #fff;
+    box-shadow: var(--shadow-soft);
 }
-/* Clearfix to fix float issues */
+
 .clearfix::after {
     content: "";
     clear: both;
     display: table;
 }
 
-/* RUBRIC: CSS Attribute Selectors (Used in Contact Form) */
+/* RUBRIC: CSS Attribute Selectors (Contact Form) */
 input[type="text"], input[type="email"], select, textarea {
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 12px;
+    border: 2px solid #edf2f7;
+    background-color: #f8fafc;
+    border-radius: 10px;
+    padding: 14px;
     width: 100%;
     transition: 0.3s;
+    font-weight: 600;
 }
 
-input[type="text"]:focus, input[type="email"]:focus {
+input[type="text"]:focus, input[type="email"]:focus, select:focus, textarea:focus {
     border-color: var(--primary-cyan);
+    background-color: #fff;
     outline: none;
-    box-shadow: 0 0 8px rgba(0, 188, 212, 0.3);
+    box-shadow: 0 0 0 4px rgba(0, 188, 212, 0.15);
 }
 
-/* RUBRIC: CSS Border Images (Used in Pricing Promo) */
+/* RUBRIC: CSS Border Images (Pricing Promo) */
 .promo-box {
     border: 10px solid transparent;
-    padding: 30px;
+    padding: 40px;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 50px;
+    background-color: white;
+    box-shadow: var(--shadow-soft);
     border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3ClinearGradient id='g' x1='0' y1='0' x2='100' y2='100'%3E%3Cstop stop-color='%2300bcd4' offset='0'/%3E%3Cstop stop-color='%23ffeb3b' offset='1'/%3E%3C/linearGradient%3E%3Cpath d='M0 0h100v100H0z' stroke='url(%23g)' stroke-width='20'/%3E%3C/svg%3E") 30;
 }
 
 /* =========================================
-   FOOTER
+   FOOTER (Unified for all pages)
    ========================================= */
 footer {
     background-color: var(--dark-blue);
     color: white;
-    padding: 60px 0 20px;
-    margin-top: 80px;
+    padding: 70px 0 20px;
+    margin-top: auto; /* Pushes footer to bottom */
 }
 
 .footer-links a {
-    color: #ccc;
+    color: rgba(255,255,255,0.6);
     text-decoration: none;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     transition: 0.3s;
+    font-weight: 600;
 }
 
 .footer-links a:hover {
     color: var(--accent-yellow);
-    padding-left: 10px;
+    padding-left: 8px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: var(--accent-yellow);
+    color: var(--dark-blue) !important;
+    transform: translateY(-3px);
 }

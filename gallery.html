@@ -7,20 +7,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        .gallery-img { cursor: pointer; height: 250px; object-fit: cover; width: 100%; border-radius: 10px; transition: 0.3s; }
-        .gallery-img:hover { filter: brightness(80%); transform: scale(1.02); }
+        .gallery-img { cursor: pointer; height: 300px; object-fit: cover; width: 100%; border-radius: 16px; transition: 0.4s ease; }
+        .gallery-img:hover { filter: brightness(75%); transform: scale(1.03); box-shadow: var(--shadow-hover); }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><i class="fas fa-plane-departure me-2"></i> MilTreat</a>
+            <a class="navbar-brand" href="index.html"><i class="fas fa-plane-departure me-2 text-warning"></i> MilTreat</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Packages</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="packages-domestic.html">Domestic</a></li>
+                            <li><a class="dropdown-item" href="packages-international.html">International</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Rates</a></li>
                     <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
@@ -29,68 +39,89 @@
     </nav>
 
     <header class="page-header">
-        <div class="container">
-            <h1>Travel Gallery</h1>
-            <p class="lead">Memories from our happy travelers.</p>
+        <div class="container fade-in">
+            <h1 class="display-4 fw-bold">Travel Gallery</h1>
+            <p class="lead fs-4">Memories from our happy travelers.</p>
         </div>
     </header>
 
-    <div class="container mb-5">
-        <div class="row g-3">
+    <main class="container mb-5 fade-in">
+        <div class="row g-4">
             <!-- RUBRIC: Image Gallery Grid -->
-            <!-- Item 1: Plane Window -->
-            <div class="col-md-4 col-sm-6">
-                <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80" 
-                     class="gallery-img shadow" onclick="openLightbox(this)" alt="Air Travel">
-            </div>
-            <!-- Item 2: Group of Friends on Beach -->
-            <div class="col-md-4 col-sm-6">
-                <img src="https://content.presspage.com/uploads/685/1920_happytravel1.jpg?10000" 
-                     class="gallery-img shadow" onclick="openLightbox(this)" alt="Happy Travelers">
-            </div>
-            <!-- Item 3: Vigan / Heritage -->
-            <div class="col-md-4 col-sm-6">
-                <img src="https://images.squarespace-cdn.com/content/v1/5a87961cbe42d637c54cab93/1552229691786-1M8KURNE27AO4YVQZDRO/vigan-philippines-city-guide%2B%2Bthings-to-do-see" 
-                     class="gallery-img shadow" onclick="openLightbox(this)" alt="Vigan Heritage">
-            </div>
-            <!-- Item 4: Passport & Map -->
-            <div class="col-md-4 col-sm-6">
-                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80" 
-                     class="gallery-img shadow" onclick="openLightbox(this)" alt="Passport Ready">
-            </div>
-            <!-- Item 5: Mayon Volcano -->
-            <div class="col-md-4 col-sm-6">
-                <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=600&q=80" 
+            <div class="col-lg-4 col-md-6">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Mayon_Volcano_and_the_Sleeping_Lion.jpg/500px-Mayon_Volcano_and_the_Sleeping_Lion.jpg" 
                      class="gallery-img shadow" onclick="openLightbox(this)" alt="Mayon Volcano">
             </div>
-            <!-- Item 6: Luggage / Airport -->
-            <div class="col-md-4 col-sm-6">
-                <img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=600&q=80" 
-                     class="gallery-img shadow" onclick="openLightbox(this)" alt="Adventure">
+            <div class="col-lg-4 col-md-6">
+                <img src="https://cdn.tatlerasia.com/asiatatler/i/ph/2021/05/14120924-untitled_cover_1085x694.png" 
+                     class="gallery-img shadow" onclick="openLightbox(this)" alt="Vigan Heritage">
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <img src="https://cdn.sanity.io/images/nxpteyfv/goguides/e795448cde308c144b5f8eead81b52a5b9a5f4e7-1600x1066.jpg" 
+                     class="gallery-img shadow" onclick="openLightbox(this)" alt="Boracay Beach">
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnS47abjR27wlHjJuLLvyFqzwWRDvpJBTh4UnjRjRDSktjw47DYrjDoszDQw_HMWPdOBR0Fs22wp1vP7iTF3CAZ9kdiphVRRMxCb9vhGR4E_SOW0upUj55lmhe6uQWZ-CYEzQnorHngc0/w1200-h630-p-k-no-nu/Chocolate-Hills.jpg" 
+                     class="gallery-img shadow" onclick="openLightbox(this)" alt="Chocolate Hills">
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <img src="https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_auto,s_webp:avif/islandhoppinginthephilippines.com/visayas/wp-content/uploads/2019/09/Cebu-City-at-night.jpeg" 
+                     class="gallery-img shadow" onclick="openLightbox(this)" alt="Cebu City">
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Kayangan_Lake%2C_Coron_-_Palawan.jpg" 
+                     class="gallery-img shadow" onclick="openLightbox(this)" alt="Palawan">
             </div>
         </div>
-    </div>
+    </main>
 
     <!-- RUBRIC: Popup Image (Lightbox) Modal -->
     <div class="modal fade" id="lightboxModal" tabindex="-1">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
             <div class="modal-content bg-transparent border-0">
-                <div class="modal-body text-center position-relative">
-                    <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"></button>
-                    <img id="modalImg" src="" class="img-fluid rounded shadow-lg" style="max-height: 80vh;">
+                <div class="modal-body text-center position-relative p-0">
+                    <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-4" data-bs-dismiss="modal" style="z-index: 10;"></button>
+                    <img id="modalImg" src="" class="img-fluid rounded-4 shadow-lg" style="max-height: 85vh; border: 5px solid white;">
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Standardized Footer -->
     <footer>
-        <div class="container text-center">
-            <p class="mb-0 small">Developed by: Group 4 AM4 (Mapúa University)</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h4 class="text-white mb-4"><i class="fas fa-plane-departure me-2 text-warning"></i>MilTreat Travel</h4>
+                    <p class="text-light opacity-75 mb-2"><i class="fas fa-map-marker-alt me-2"></i> Dama de Noche Street, Angono, Rizal</p>
+                    <p class="text-light opacity-75 mb-2"><i class="fas fa-phone me-2"></i> +639457884187</p>
+                    <p class="text-light opacity-75"><i class="fas fa-envelope me-2"></i> miltreattravelandtours@gmail.com</p>
+                </div>
+                <div class="col-md-4 mb-4 footer-links">
+                    <h4 class="text-white mb-4">Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="packages-domestic.html">Domestic Packages</a>
+                    <a href="packages-international.html">International Packages</a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h4 class="text-white mb-4">Follow Us</h4>
+                    <div class="d-flex gap-3 fs-5 social-icons">
+                        <a href="https://www.facebook.com/miltreat" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/miltreat" class="text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@miltreattourservices" class="text-white"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-light opacity-25 mt-4 mb-4">
+            <div class="text-center">
+                <p class="mb-0 small text-light opacity-75">Developed by: Group 4 AM4 (Mapúa University) | ITS121L Project</p>
+            </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Custom JS for Lightbox -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function openLightbox(element) {
             var modal = new bootstrap.Modal(document.getElementById('lightboxModal'));

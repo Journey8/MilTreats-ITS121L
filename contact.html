@@ -10,13 +10,24 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><i class="fas fa-plane-departure me-2"></i> MilTreat</a>
+            <a class="navbar-brand" href="index.html"><i class="fas fa-plane-departure me-2 text-warning"></i> MilTreat</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Packages</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="packages-domestic.html">Domestic</a></li>
+                            <li><a class="dropdown-item" href="packages-international.html">International</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Rates</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
                 </ul>
             </div>
@@ -24,82 +35,118 @@
     </nav>
 
     <header class="page-header">
-        <div class="container">
-            <h1>Contact Us</h1>
-            <p class="lead">We'd love to hear from you.</p>
+        <div class="container fade-in">
+            <h1 class="display-4 fw-bold">Contact Us</h1>
+            <p class="lead fs-4">We'd love to hear from you.</p>
         </div>
     </header>
 
-    <div class="container mb-5">
+    <main class="container mb-5 fade-in">
         <div class="row g-5">
             <!-- Contact Info & Map -->
-            <div class="col-lg-6">
-                <h3 class="mb-4">Get in Touch</h3>
-                <div class="d-flex mb-3">
-                    <i class="fas fa-map-marker-alt text-primary fs-4 me-3"></i>
+            <div class="col-lg-5">
+                <h3 class="mb-4 fw-bold">Get in Touch</h3>
+                <div class="d-flex mb-4 align-items-center">
+                    <div class="bg-light rounded-circle p-3 me-3 text-info">
+                        <i class="fas fa-map-marker-alt fs-3"></i>
+                    </div>
                     <div>
-                        <h6 class="fw-bold">Office Address</h6>
-                        <p class="text-muted">Dama de Noche Street, Angono, Rizal</p>
+                        <h6 class="fw-bold mb-1">Office Address</h6>
+                        <p class="text-muted mb-0">Dama de Noche Street, Angono, Rizal</p>
                     </div>
                 </div>
-                <div class="d-flex mb-3">
-                    <i class="fas fa-phone-alt text-primary fs-4 me-3"></i>
+                <div class="d-flex mb-4 align-items-center">
+                    <div class="bg-light rounded-circle p-3 me-3 text-info">
+                        <i class="fas fa-phone-alt fs-3"></i>
+                    </div>
                     <div>
-                        <h6 class="fw-bold">Phone / Viber</h6>
-                        <p class="text-muted">+639457884187</p>
+                        <h6 class="fw-bold mb-1">Phone / Viber</h6>
+                        <p class="text-muted mb-0">+639457884187</p>
                     </div>
                 </div>
-                <div class="d-flex mb-4">
-                    <i class="fas fa-envelope text-primary fs-4 me-3"></i>
+                <div class="d-flex mb-5 align-items-center">
+                    <div class="bg-light rounded-circle p-3 me-3 text-info">
+                        <i class="fas fa-envelope fs-3"></i>
+                    </div>
                     <div>
-                        <h6 class="fw-bold">Email</h6>
-                        <p class="text-muted">miltreattravelandtours@gmail.com</p>
+                        <h6 class="fw-bold mb-1">Email</h6>
+                        <p class="text-muted mb-0">miltreattravelandtours@gmail.com</p>
                     </div>
                 </div>
 
                 <!-- Google Map Embed -->
-                <div class="ratio ratio-16x9 rounded overflow-hidden shadow">
+                <div class="ratio ratio-4x3 rounded-4 overflow-hidden shadow-sm border">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.888497825316!2d121.153!3d14.524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDMxJzI2LjQiTiAxMjHCsDA5JzExLjIiRQ!5e0!3m2!1sen!2sph!4v1620000000000!5m2!1sen!2sph" 
                             style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
 
             <!-- RUBRIC: Contact Form -->
-            <div class="col-lg-6">
-                <div class="p-4 bg-white rounded shadow h-100">
-                    <h3 class="mb-4">Send an Inquiry</h3>
+            <div class="col-lg-7">
+                <div class="p-5 bg-white rounded-4 shadow-lg h-100 border-top border-5 border-info">
+                    <h3 class="mb-4 fw-bold">Send an Inquiry</h3>
                     <form>
-                        <div class="mb-3">
-                            <label class="form-label">Full Name</label>
-                            <!-- CSS Attribute Selector targets this -->
-                            <input type="text" placeholder="John Doe" required>
+                        <div class="row g-3">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label text-muted fw-bold">Full Name</label>
+                                <!-- CSS Attribute Selector targets this -->
+                                <input type="text" placeholder="Juan Dela Cruz" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label text-muted fw-bold">Email Address</label>
+                                <input type="email" placeholder="juan@example.com" required>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">Email Address</label>
-                            <input type="email" placeholder="email@example.com" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Topic</label>
-                            <select class="form-select">
+                        <div class="mb-3 mt-2">
+                            <label class="form-label text-muted fw-bold">Topic</label>
+                            <select class="form-select border-2 py-3 fw-bold text-muted">
                                 <option>General Inquiry</option>
                                 <option>Passport Assistance</option>
-                                <option>Tour Package</option>
+                                <option>Tour Package Booking</option>
                             </select>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">Message</label>
-                            <textarea class="form-control" rows="5" placeholder="How can we help you?"></textarea>
+                        <div class="mb-4 mt-3">
+                            <label class="form-label text-muted fw-bold">Message</label>
+                            <textarea class="form-control border-2" rows="6" placeholder="How can we help you plan your trip?"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-brand w-100">Send Message</button>
+                        <button type="submit" class="btn btn-brand w-100 py-3 fs-5">Send Message <i class="fas fa-paper-plane ms-2"></i></button>
                     </form>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
+    <!-- Standardized Footer -->
     <footer>
-        <div class="container text-center">
-            <p class="mb-0 small">Developed by: Group 4 AM4 (Mapúa University)</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h4 class="text-white mb-4"><i class="fas fa-plane-departure me-2 text-warning"></i>MilTreat Travel</h4>
+                    <p class="text-light opacity-75 mb-2"><i class="fas fa-map-marker-alt me-2"></i> Dama de Noche Street, Angono, Rizal</p>
+                    <p class="text-light opacity-75 mb-2"><i class="fas fa-phone me-2"></i> +639457884187</p>
+                    <p class="text-light opacity-75"><i class="fas fa-envelope me-2"></i> miltreattravelandtours@gmail.com</p>
+                </div>
+                <div class="col-md-4 mb-4 footer-links">
+                    <h4 class="text-white mb-4">Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="packages-domestic.html">Domestic Packages</a>
+                    <a href="packages-international.html">International Packages</a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h4 class="text-white mb-4">Follow Us</h4>
+                    <div class="d-flex gap-3 fs-5 social-icons">
+                        <a href="https://www.facebook.com/miltreat" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/miltreat" class="text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@miltreattourservices" class="text-white"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-light opacity-25 mt-4 mb-4">
+            <div class="text-center">
+                <p class="mb-0 small text-light opacity-75">Developed by: Group 4 AM4 (Mapúa University) | ITS121L Project</p>
+            </div>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
