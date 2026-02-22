@@ -10,7 +10,14 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><i class="fas fa-plane-departure me-2 text-warning"></i> MilTreat</a>
+            <!-- UPDATED LOGO & TEXT HERE -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="translogo2.png" alt="MilTreat Icon" class="brand-logo">
+                <div class="d-flex flex-column justify-content-center">
+                    <span class="brand-text-main">MilTreat</span>
+                    <span class="brand-text-sub">Travel and Tours</span>
+                </div>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -19,7 +26,7 @@
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Packages</a>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Packages</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="packages-domestic.html">Domestic</a></li>
                             <li><a class="dropdown-item" href="packages-international.html">International</a></li>
@@ -43,6 +50,7 @@
 
     <main class="container mb-5 fade-in">
         <!-- Premium Image Map Container -->
+        <!-- Premium Image Map Container -->
         <div class="row mb-5">
             <div class="col-lg-8 mx-auto">
                 <div class="card border-0 shadow-lg rounded-4 overflow-hidden bg-white p-4">
@@ -50,25 +58,28 @@
                     <p class="text-center text-muted mb-4">Click on Luzon, Visayas, or Mindanao to jump to exclusive deals!</p>
                     
                     <div class="d-flex justify-content-center bg-light rounded-4 p-3 border">
+                        <!-- Make sure the image file is exactly named Philippines.png in your folder -->
                         <img src="Philippines.png" 
                              alt="Philippines Map" 
                              usemap="#phmap" 
                              width="320" 
                              height="533"
-                             class="rounded">
+                             class="rounded img-fluid" style="max-width: 320px;">
 
                         <map name="phmap">
+                            <!-- You will fix these coordinates later -->
                             <area shape="rect" coords="0,0,320,200" href="#luzon" alt="Luzon" title="Go to Luzon Packages">
                             <area shape="rect" coords="0,200,320,350" href="#visayas" alt="Visayas" title="Go to Visayas Packages">
                             <area shape="rect" coords="0,350,320,533" href="#mindanao" alt="Mindanao" title="Go to Mindanao Packages">
                         </map>
                     </div>
                     
-                    <div class="mt-4 text-center d-md-none">
+                    <!-- REMOVED d-md-none so buttons always show up -->
+                    <div class="mt-4 text-center">
                         <p class="text-muted small fw-bold">Or use quick links below:</p>
                         <a href="#luzon" class="btn btn-primary rounded-pill px-4 mx-1">Luzon</a>
                         <a href="#visayas" class="btn btn-warning text-dark rounded-pill px-4 mx-1">Visayas</a>
-                        <a href="#mindanao" class="btn btn-danger rounded-pill px-4 mx-1 mt-2">Mindanao</a>
+                        <a href="#mindanao" class="btn btn-danger rounded-pill px-4 mx-1 mt-2 mt-md-0">Mindanao</a>
                     </div>
                 </div>
             </div>
@@ -144,10 +155,17 @@
 
     <!-- Standardized Footer -->
     <footer>
-        <div class="container">
+       <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-4">
-                    <h4 class="text-white mb-4"><i class="fas fa-plane-departure me-2 text-warning"></i>MilTreat Travel</h4>
+                    <!-- UPDATED FOOTER LOGO & TEXT -->
+                    <div class="d-flex align-items-center mb-4">
+                        <img src="translogo2.png" alt="MilTreat Icon" class="footer-logo">
+                        <div class="d-flex flex-column">
+                            <span class="brand-text-main fs-3">MilTreat</span>
+                            <span class="brand-text-sub">Travel and Tours</span>
+                        </div>
+                    </div>
                     <p class="text-light opacity-75 mb-2"><i class="fas fa-map-marker-alt me-2"></i> Dama de Noche Street, Angono, Rizal</p>
                     <p class="text-light opacity-75 mb-2"><i class="fas fa-phone me-2"></i> +639457884187</p>
                     <p class="text-light opacity-75"><i class="fas fa-envelope me-2"></i> miltreattravelandtours@gmail.com</p>

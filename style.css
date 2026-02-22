@@ -285,3 +285,42 @@ footer {
     color: var(--dark-blue) !important;
     transform: translateY(-3px);
 }
+
+/* =========================================
+   LOGO STYLING
+   ========================================= */
+.brand-logo {
+    height: 45px; 
+    width: auto; /* Fixed the 1000% issue */
+    transition: 0.3s;
+    margin-right: 12px; /* Space between icon and text */
+}
+
+.brand-logo:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.footer-logo {
+    height: 55px;
+    width: auto;
+    margin-right: 15px;
+}
+
+/* Text formatting next to the logo */
+.brand-text-main {
+    font-weight: 800;
+    color: var(--text-light);
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+.brand-text-sub {
+    font-weight: 700;
+    color: var(--accent-yellow); /* Makes it pop on the dark background */
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
