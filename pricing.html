@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 
-    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VF037BDNQ0"></script>
     <script>
@@ -18,12 +17,37 @@
 
     gtag('config', 'G-VF037BDNQ0');
     </script>
+    
+    <style>
+        /* Table Mobile Scroll Hint */
+        .table-responsive {
+            /* Adds a subtle inner shadow to hint at scrolling */
+            background: 
+                linear-gradient(to right, white 30%, rgba(255,255,255,0)),
+                linear-gradient(to right, rgba(255,255,255,0), white 70%) 0 100%,
+                radial-gradient(farthest-side at 0 50%, rgba(0,0,0,.1), rgba(0,0,0,0)),
+                radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,.1), rgba(0,0,0,0)) 0 100%;
+            background-repeat: no-repeat;
+            background-color: white;
+            background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
+            background-position: 0 0, 100%, 0 0, 100%;
+            background-attachment: local, local, scroll, scroll;
+        }
+    </style>
 
 </head>
 <body>
+    <!-- Standardized Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><i class="fas fa-plane-departure me-2 text-warning"></i> MilTreat</a>
+            <!-- CORRECTED LOGO & TEXT HERE -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="translogo2.png" alt="MilTreat Icon" class="brand-logo">
+                <div class="d-flex flex-column justify-content-center">
+                    <span class="brand-text-main">MilTreat</span>
+                    <span class="brand-text-sub">Travel and Tours</span>
+                </div>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -49,50 +73,55 @@
 
     <header class="page-header">
         <div class="container fade-in">
-            <h1 class="display-4 fw-bold">Service Rates</h1>
-            <p class="lead fs-4">Transparent pricing for your peace of mind.</p>
+            <h1 class="display-4 fw-bold text-white">Service Rates</h1>
+            <p class="lead fs-4 text-white">Transparent pricing for your peace of mind.</p>
         </div>
     </header>
 
     <main class="container mb-5 fade-in">
-        <!-- RUBRIC: HTML Tables -->
-        <div class="table-responsive shadow-lg rounded-4 bg-white overflow-hidden border">
-            <table class="table table-hover align-middle mb-0">
-                <thead class="text-white" style="background: var(--dark-blue);">
-                    <tr>
-                        <th class="py-4 ps-4 fw-bold border-0">Service Type</th>
-                        <th class="py-4 fw-bold border-0">Description</th>
-                        <th class="py-4 fw-bold border-0">Processing Time</th>
-                        <th class="py-4 pe-4 fw-bold border-0">Price (PHP)</th>
-                    </tr>
-                </thead>
-                <tbody class="fs-5">
-                    <tr>
-                        <td class="ps-4 py-3 fw-bold text-dark">PSA Birth Certificate</td>
-                        <td class="text-muted">Copy issuance (Security Paper)</td>
-                        <td><span class="badge bg-light text-dark border">3-5 Days</span></td>
-                        <td class="text-success fw-bold pe-4">₱450.00</td>
-                    </tr>
-                    <tr>
-                        <td class="ps-4 py-3 fw-bold text-dark">PSA CENOMAR</td>
-                        <td class="text-muted">Certificate of No Marriage</td>
-                        <td><span class="badge bg-light text-dark border">3-5 Days</span></td>
-                        <td class="text-success fw-bold pe-4">₱550.00</td>
-                    </tr>
-                    <tr>
-                        <td class="ps-4 py-3 fw-bold text-dark">Passport Renewal</td>
-                        <td class="text-muted">Appointment + Form Filling</td>
-                        <td><span class="badge bg-info text-white border-0">DFA Standard</span></td>
-                        <td class="text-success fw-bold pe-4">₱1,500.00</td>
-                    </tr>
-                    <tr>
-                        <td class="ps-4 py-3 fw-bold text-dark">New Passport</td>
-                        <td class="text-muted">Appointment + Form Filling</td>
-                        <td><span class="badge bg-info text-white border-0">DFA Standard</span></td>
-                        <td class="text-success fw-bold pe-4">₱1,500.00</td>
-                    </tr>
-                </tbody>
-            </table>
+        <!-- RUBRIC: HTML Tables (Fixed for Mobile) -->
+        <div class="card border-0 shadow-lg rounded-4 mb-5 overflow-hidden">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <!-- Added text-nowrap to prevent awkward vertical squishing -->
+                    <table class="table table-hover align-middle mb-0 text-nowrap">
+                        <thead class="text-white" style="background: var(--dark-blue);">
+                            <tr>
+                                <th class="py-4 ps-4 fw-bold border-0">Service Type</th>
+                                <th class="py-4 fw-bold border-0">Description</th>
+                                <th class="py-4 fw-bold border-0">Processing Time</th>
+                                <th class="py-4 pe-4 fw-bold border-0">Price (PHP)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="fs-5">
+                            <tr>
+                                <td class="ps-4 py-3 fw-bold text-dark">PSA Birth Certificate</td>
+                                <td class="text-muted">Copy issuance (Security Paper)</td>
+                                <td><span class="badge bg-light text-dark border">3-5 Days</span></td>
+                                <td class="text-success fw-bold pe-4">₱450.00</td>
+                            </tr>
+                            <tr>
+                                <td class="ps-4 py-3 fw-bold text-dark">PSA CENOMAR</td>
+                                <td class="text-muted">Certificate of No Marriage</td>
+                                <td><span class="badge bg-light text-dark border">3-5 Days</span></td>
+                                <td class="text-success fw-bold pe-4">₱550.00</td>
+                            </tr>
+                            <tr>
+                                <td class="ps-4 py-3 fw-bold text-dark">Passport Renewal</td>
+                                <td class="text-muted">Appointment + Form Filling</td>
+                                <td><span class="badge bg-info text-white border-0">DFA Standard</span></td>
+                                <td class="text-success fw-bold pe-4">₱1,500.00</td>
+                            </tr>
+                            <tr>
+                                <td class="ps-4 py-3 fw-bold text-dark">New Passport</td>
+                                <td class="text-muted">Appointment + Form Filling</td>
+                                <td><span class="badge bg-info text-white border-0">DFA Standard</span></td>
+                                <td class="text-success fw-bold pe-4">₱1,500.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
 
         <!-- RUBRIC: Border Image Promo Box -->
@@ -108,8 +137,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-4">
-                    <h4 class="text-white mb-4"><i class="fas fa-plane-departure me-2 text-warning"></i>MilTreat Travel</h4>
-                    <p class="text-light opacity-75 mb-2"><i class="fas fa-map-marker-alt me-2"></i> Dama de Noche Street, Angono, Rizal</p>
+                    <!-- CORRECTED FOOTER LOGO & TEXT -->
+                    <div class="d-flex align-items-center mb-4">
+                        <img src="translogo2.png" alt="MilTreat Icon" class="footer-logo">
+                        <div class="d-flex flex-column">
+                            <span class="brand-text-main fs-3">MilTreat</span>
+                            <span class="brand-text-sub">Travel and Tours</span>
+                        </div>
+                    </div>
+                    
+                    <p class="text-light opacity-75 mb-2 mt-2"><i class="fas fa-map-marker-alt me-2"></i> Dama de Noche Street, Angono, Rizal</p>
                     <p class="text-light opacity-75 mb-2"><i class="fas fa-phone me-2"></i> +639457884187</p>
                     <p class="text-light opacity-75"><i class="fas fa-envelope me-2"></i> miltreattravelandtours@gmail.com</p>
                 </div>
@@ -123,11 +160,22 @@
                 </div>
                 <div class="col-md-4 mb-4">
                     <h4 class="text-white mb-4">Follow Us</h4>
-                    <div class="d-flex gap-3 fs-5 social-icons">
+                    <div class="d-flex gap-3 fs-5 social-icons mb-4">
                         <a href="https://www.facebook.com/miltreat" class="text-white"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/miltreat" class="text-white"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.tiktok.com/@miltreattourservices" class="text-white"><i class="fab fa-tiktok"></i></a>
                     </div>
+                    
+                    <!-- Newsletter Database Integration -->
+                    <h4 class="text-white mb-3 fs-5">Subscribe to Promos</h4>
+                    <form action="https://api.web3forms.com/submit" method="POST" class="d-flex">
+                        <input type="hidden" name="access_key" value="d3afd3b6-647a-40ac-8ccb-11cb5060acbc">
+                        <input type="hidden" name="subject" value="New Newsletter Subscriber!">
+                        <input type="hidden" name="redirect" value="https://journey8.github.io/MilTreats-ITS121L/index.html">
+                        
+                        <input type="email" name="email" class="form-control rounded-start-pill border-0" placeholder="Email address" required>
+                        <button type="submit" class="btn btn-brand rounded-end-pill px-3" style="border-radius: 0 50px 50px 0;">Send</button>
+                    </form>
                 </div>
             </div>
             <hr class="border-light opacity-25 mt-4 mb-4">
@@ -136,6 +184,7 @@
             </div>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
