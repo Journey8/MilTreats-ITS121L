@@ -63,7 +63,6 @@
 
     <main class="container mb-5 fade-in">
         <!-- Premium Image Map Container -->
-        <!-- Premium Image Map Container -->
         <div class="row mb-5">
             <div class="col-lg-8 mx-auto">
                 <div class="card border-0 shadow-lg rounded-4 overflow-hidden bg-white p-4">
@@ -193,11 +192,22 @@
                 </div>
                 <div class="col-md-4 mb-4">
                     <h4 class="text-white mb-4">Follow Us</h4>
-                    <div class="d-flex gap-3 fs-5 social-icons">
+                    <div class="d-flex gap-3 fs-5 social-icons mb-4">
                         <a href="https://www.facebook.com/miltreat" class="text-white"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/miltreat" class="text-white"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.tiktok.com/@miltreattourservices" class="text-white"><i class="fab fa-tiktok"></i></a>
                     </div>
+                    
+                    <!-- NEW: Newsletter Database Integration -->
+                    <h4 class="text-white mb-3 fs-5">Subscribe to Promos</h4>
+                    <form action="https://api.web3forms.com/submit" method="POST" class="d-flex">
+                        <input type="hidden" name="access_key" value="d3afd3b6-647a-40ac-8ccb-11cb5060acbc">
+                        <input type="hidden" name="subject" value="New Newsletter Subscriber!">
+                        <input type="hidden" name="redirect" value="https://journey8.github.io/MilTreats-ITS121L/index.html">
+                        
+                        <input type="email" name="email" class="form-control rounded-start-pill border-0" placeholder="Email address" required>
+                        <button type="submit" class="btn btn-brand rounded-end-pill px-3" style="border-radius: 0 50px 50px 0;">Send</button>
+                    </form>
                 </div>
             </div>
             <hr class="border-light opacity-25 mt-4 mb-4">
