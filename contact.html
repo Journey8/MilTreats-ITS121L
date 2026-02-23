@@ -105,20 +105,27 @@
             <div class="col-lg-7">
                 <div class="p-5 bg-white rounded-4 shadow-lg h-100 border-top border-5 border-info">
                     <h3 class="mb-4 fw-bold">Send an Inquiry</h3>
-                    <form id="inquiryForm">
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        <!-- Replace this with your actual Access Key from your email -->
+                        <input type="hidden" name="access_key" value="d3afd3b6-647a-40ac-8ccb-11cb5060acbc">
+                        
+                        <!-- Optional: Redirects them back to your site after submitting -->
+                        <input type="hidden" name="redirect" value="https://journey8.github.io/MilTreats-ITS121L/contact.html">
+
                         <div class="row g-3">
                             <div class="col-md-6 mb-3">
                                 <label class="form-label text-muted fw-bold">Full Name</label>
-                                <input type="text" id="userName" placeholder="Juan Dela Cruz" required>
+                                <!-- Note: I added name="name" which is required for the database -->
+                                <input type="text" name="name" placeholder="Juan Dela Cruz" required>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label text-muted fw-bold">Email Address</label>
-                                <input type="email" id="userEmail" placeholder="juan@example.com" required>
+                                <input type="email" name="email" placeholder="juan@example.com" required>
                             </div>
                         </div>
                         <div class="mb-3 mt-2">
                             <label class="form-label text-muted fw-bold">Topic</label>
-                            <select id="userTopic" class="form-select border-2 py-3 fw-bold text-muted">
+                            <select name="topic" class="form-select border-2 py-3 fw-bold text-muted">
                                 <option value="General Inquiry">General Inquiry</option>
                                 <option value="Passport Assistance">Passport Assistance</option>
                                 <option value="Tour Package Booking">Tour Package Booking</option>
@@ -126,10 +133,9 @@
                         </div>
                         <div class="mb-4 mt-3">
                             <label class="form-label text-muted fw-bold">Message</label>
-                            <textarea id="userMessage" class="form-control border-2" rows="6" placeholder="How can we help you plan your trip?" required></textarea>
+                            <textarea name="message" class="form-control border-2" rows="6" placeholder="How can we help you plan your trip?" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-brand w-100 py-3 fs-5">Send Message via Email <i class="fas fa-paper-plane ms-2"></i></button>
-                        <p class="text-center text-muted small mt-3"><i class="fas fa-info-circle"></i> Clicking this will open your device's default email app with a pre-filled message.</p>
+                        <button type="submit" class="btn btn-brand w-100 py-3 fs-5">Submit to Database <i class="fas fa-database ms-2"></i></button>
                     </form>
                     
                 </div>
@@ -178,25 +184,5 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Contact Form Logic -->
-    <script>
-        document.getElementById('inquiryForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevents the page from refreshing
-            
-            // Get values from the form
-            const name = document.getElementById('userName').value;
-            const topic = document.getElementById('userTopic').value;
-            const message = document.getElementById('userMessage').value;
-            
-            // Construct the email components
-            const targetEmail = "miltreattravelandtours@gmail.com";
-            const emailSubject = encodeURIComponent(`MilTreat Inquiry: ${topic} from ${name}`);
-            const emailBody = encodeURIComponent(`Name: ${name}\nTopic: ${topic}\n\nMessage:\n${message}\n\n---\nSent via MilTreat Website`);
-            
-            // Redirect to the mailto link (opens default email client)
-            window.location.href = `mailto:${targetEmail}?subject=${emailSubject}&body=${emailBody}`;
-        });
-    </script>
 </body>
 </html>
