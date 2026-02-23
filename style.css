@@ -324,3 +324,37 @@ footer {
     text-transform: uppercase;
     margin-top: 2px;
 }
+
+/* =========================================
+   MOBILE RESPONSIVENESS (Media Queries)
+   ========================================= */
+@media (max-width: 991px) {
+    /* Premium Mobile Hamburger Menu */
+    .navbar-collapse {
+        background-color: var(--dark-blue);
+        padding: 15px;
+        border-radius: 12px;
+        margin-top: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+    .nav-link {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    /* Fix CSS Float on Mobile (About Page) */
+    .float-img-left {
+        float: none; /* Disables float on small screens */
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    /* Resize Hero Text for Mobile */
+    .hero-title {
+        font-size: 2.5rem !important;
+    }
+    .hero-subtitle {
+        font-size: 1.2rem !important;
+    }
+}
