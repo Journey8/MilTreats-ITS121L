@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
 
     
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VF037BDNQ0"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -63,7 +63,7 @@
 
     <main class="container mb-5 fade-in">
         <div class="row g-5">
-            <!-- Contact Info & Map -->
+            <!-- Contact Info & Google Map -->
             <div class="col-lg-5">
                 <h3 class="mb-4 fw-bold">Get in Touch</h3>
                 <div class="d-flex mb-4 align-items-center">
@@ -101,26 +101,22 @@
                 </div>
             </div>
 
-            <!-- RUBRIC: Contact Form -->
+            <!-- Contact Form -->
             <div class="col-lg-7">
                 <div class="p-5 bg-white rounded-4 shadow-lg h-100 border-top border-5 border-info">
                     <h3 class="mb-4 fw-bold">Send an Inquiry</h3>
                     <form action="https://api.web3forms.com/submit" method="POST">
-                        <!-- Replace this with your actual Access Key from your email -->
                         <input type="hidden" name="access_key" value="d3afd3b6-647a-40ac-8ccb-11cb5060acbc">
-                        
-                        <!-- Optional: Redirects them back to your site after submitting -->
                         <input type="hidden" name="redirect" value="https://journey8.github.io/MilTreats-ITS121L/contact.html">
 
                         <div class="row g-3">
                             <div class="col-md-6 mb-3">
                                 <label class="form-label text-muted fw-bold">Full Name</label>
-                                <!-- Note: I added name="name" which is required for the database -->
-                                <input type="text" name="name" placeholder="Juan Dela Cruz" required>
+                                <input type="text" name="name" placeholder="Sean Benedict Amedo" required>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label text-muted fw-bold">Email Address</label>
-                                <input type="email" name="email" placeholder="juan@example.com" required>
+                                <input type="email" name="email" placeholder="sbAmedo@gmail.com" required>
                             </div>
                         </div>
                         <div class="mb-3 mt-2">
@@ -143,7 +139,7 @@
         </div>
     </main>
 
-    <!-- Standardized Footer -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="row">
@@ -176,7 +172,7 @@
                         <a href="https://www.tiktok.com/@miltreattourservices" class="text-white"><i class="fab fa-tiktok"></i></a>
                     </div>
                     
-                    <!-- NEW: Newsletter Database Integration -->
+                    <!--  Newsletter Database Using Web3forms -->
                     <h4 class="text-white mb-3 fs-5">Subscribe to Promos</h4>
                     <form action="https://api.web3forms.com/submit" method="POST" class="d-flex">
                         <input type="hidden" name="access_key" value="d3afd3b6-647a-40ac-8ccb-11cb5060acbc">

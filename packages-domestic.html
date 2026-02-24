@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
 
     
-    <!-- Google tag (gtag.js) -->
+    <!-- GOOGLE TAG FOR ANALYTICS -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VF037BDNQ0"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -62,7 +62,7 @@
     </header>
 
     <main class="container mb-5 fade-in">
-        <!-- Premium Image Map Container -->
+        <!-- Image Map Container -->
         <div class="row mb-5">
             <div class="col-lg-8 mx-auto">
                 <div class="card border-0 shadow-lg rounded-4 overflow-hidden bg-white p-4">
@@ -70,7 +70,6 @@
                     <p class="text-center text-muted mb-4">Click on Luzon, Visayas, or Mindanao to jump to exclusive deals!</p>
                     
                     <div class="d-flex justify-content-center bg-light rounded-4 p-3 border">
-                        <!-- Make sure the image file is exactly named Philippines.png in your folder -->
                         <img src="transphilippines.png" 
                              alt="Philippines Map" 
                              usemap="#phmap" 
@@ -79,14 +78,13 @@
                              class="rounded img-fluid" style="max-width: 320px;">
 
                         <map name="phmap">
-                            <!-- You will fix these coordinates later -->
-                            <area shape="rect" coords="0,0,320,200" href="#luzon" alt="Luzon" title="Go to Luzon Packages">
-                            <area shape="rect" coords="0,200,320,350" href="#visayas" alt="Visayas" title="Go to Visayas Packages">
-                            <area shape="rect" coords="0,350,320,533" href="#mindanao" alt="Mindanao" title="Go to Mindanao Packages">
+                            <!-- Will fix the coords later -->
+                            <area shape="rect" coords="181,45,320,219" href="#luzon" alt="Luzon" title="Go to Luzon Packages">
+                            <area shape="rect" coords="95,204,298,351" href="#visayas" alt="Visayas" title="Go to Visayas Packages">
+                            <area shape="rect" coords="183,364,412,465" href="#mindanao" alt="Mindanao" title="Go to Mindanao Packages">
                         </map>
                     </div>
                     
-                    <!-- REMOVED d-md-none so buttons always show up -->
                     <div class="mt-4 text-center">
                         <p class="text-muted small fw-bold">Or use quick links below:</p>
                         <a href="#luzon" class="btn btn-primary rounded-pill px-4 mx-1">Luzon</a>
@@ -165,7 +163,7 @@
         </div>
     </main>
 
-    <!-- Standardized Footer -->
+    <!-- Footer -->
     <footer>
        <div class="container">
             <div class="row">
@@ -198,7 +196,7 @@
                         <a href="https://www.tiktok.com/@miltreattourservices" class="text-white"><i class="fab fa-tiktok"></i></a>
                     </div>
                     
-                    <!-- NEW: Newsletter Database Integration -->
+                    <!--  Newsletter Database Using Web3forms -->
                     <h4 class="text-white mb-3 fs-5">Subscribe to Promos</h4>
                     <form action="https://api.web3forms.com/submit" method="POST" class="d-flex">
                         <input type="hidden" name="access_key" value="d3afd3b6-647a-40ac-8ccb-11cb5060acbc">
