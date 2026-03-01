@@ -309,6 +309,7 @@ footer {
 
 /* MOBILE RESPONSIVENESS */
 @media (max-width: 991px) {
+    /* Premium Mobile Hamburger Menu */
     .navbar-collapse {
         background-color: var(--dark-blue);
         padding: 15px;
@@ -321,7 +322,7 @@ footer {
         border-bottom: 1px solid rgba(255,255,255,0.1);
     }
     
-    /* CSS FLOAT FIX FOR MOBILE */
+    /* Fix CSS Float for Mobile */
     .float-img-left {
         float: none; 
         width: 100%;
@@ -329,11 +330,76 @@ footer {
         margin-bottom: 20px;
     }
     
-    /* RESIZING THE HERO TEXT */
     .hero-title {
         font-size: 2.5rem !important;
     }
     .hero-subtitle {
         font-size: 1.2rem !important;
     }
+} 
+
+
+/* CHECKOUT UI */
+.step-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background-color: var(--dark-blue);
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Clickable Cards Design */
+.payment-card {
+    border: 2px solid #edf2f7;
+    border-radius: 12px;
+    padding: 20px 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+    font-weight: 600;
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%; 
+}
+
+.payment-card:hover {
+    border-color: var(--primary-cyan);
+    background-color: #f0fbfe;
+}
+
+/* When the hidden radio is checked, highlight the card next to it */
+input[type="radio"]:checked + .payment-card {
+    border-color: var(--accent-main);
+    background-color: #fff9e6;
+    box-shadow: 0 4px 10px rgba(255, 152, 0, 0.2);
+    color: var(--dark-blue);
+    transform: scale(1.02);
+}
+
+/* Payment Logos */
+.payment-logo {
+    height: 40px !important;
+    width: 100% !important; 
+    max-width: 100px !important; 
+    object-fit: contain !important; 
+    margin-bottom: 12px !important;
+    display: block;
+}
+
+/* Toast Notification Positioning */
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1055;
 }
