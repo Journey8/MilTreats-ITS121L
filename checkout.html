@@ -11,7 +11,7 @@
     <!-- Google tag -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VF037BDNQ0"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
+      window.dataLayer = window.dataLayer ||[];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-VF037BDNQ0');
@@ -19,7 +19,7 @@
 </head>
 <body>
 
-    <!-- Navbar (Checkout is not listed) -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
@@ -67,11 +67,10 @@
             <input type="hidden" name="access_key" value="d3afd3b6-647a-40ac-8ccb-11cb5060acbc">
 
             <!-- FormSubmit Setup -->
-             <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_autoresponse" value="Hi! Thank you for choosing MilTreat Travel and Tours. 
-            We have successfully received your booking request. Our team will review it and send you the official 
-            payment instructions shortly.">
+            <!-- FIX: Autoresponse is now strictly on a single continuous line to prevent parser breakage -->
+            <input type="hidden" name="_autoresponse" value="Hi! Thank you for choosing MilTreat Travel and Tours. We have successfully received your booking request. Our team will review it and send you the official payment instructions shortly.">
 
             <!-- Select a Service -->
             <div class="card border-0 shadow-sm rounded-4 mb-4 border-top border-5 border-primary">
@@ -94,7 +93,7 @@
                 </div>
             </div>
 
-            <!-- Client Details (With Country Code Validation) -->
+            <!-- Client Details -->
             <div class="card border-0 shadow-sm rounded-4 mb-4 border-top border-5 border-info">
                 <div class="card-body p-4">
                     <h4 class="mb-3 fw-bold"><span class="step-circle">2</span> Your Details</h4>
@@ -105,12 +104,12 @@
                         </div>
                         <div class="col-md-6">
                             <label class="form-label fw-bold text-muted">Email Address</label>
+                            <!-- This email field triggers the FormSubmit autoresponder -->
                             <input type="email" name="email" class="form-control border-2 py-3" placeholder="juan@example.com" required>
                         </div>
                         <div class="col-md-12">
                             <label class="form-label fw-bold text-muted">Mobile Number</label>
                             <div class="input-group">
-                                <!-- Country Code Dropdown -->
                                 <select name="country_code" class="form-select border-2 fw-bold" style="max-width: 130px;" required>
                                     <option value="+63" selected>🇵🇭 +63</option>
                                     <option value="+1">🇺🇸 +1</option>
@@ -119,7 +118,6 @@
                                     <option value="+81">🇯🇵 +81</option>
                                     <option value="+65">🇸🇬 +65</option>
                                 </select>
-                                <!-- Phone Input with HTML5 Pattern Validation -->
                                 <input type="tel" name="phone" class="form-control border-2 py-3" placeholder="9123456789" pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number without spaces (e.g. 9123456789)" required>
                             </div>
                             <div class="form-text text-muted small mt-1">Do not include the starting 0 for PH numbers.</div>
@@ -132,9 +130,7 @@
             <div class="card border-0 shadow-sm rounded-4 mb-4 border-top border-5 border-warning">
                 <div class="card-body p-4">
                     <h4 class="mb-4 fw-bold"><span class="step-circle">3</span> Select Payment</h4>
-                    
                     <div class="row g-3">
-                        <!-- GCash -->
                         <div class="col-6 col-md-3">
                             <input type="radio" name="payment_method" id="gcash" value="GCash" class="d-none" required>
                             <label for="gcash" class="payment-card">
@@ -142,16 +138,13 @@
                                 <span>GCash</span>
                             </label>
                         </div>
-                        <!-- Maya -->
                         <div class="col-6 col-md-3">
                             <input type="radio" name="payment_method" id="maya" value="Maya" class="d-none">
                             <label for="maya" class="payment-card">
-                                <!-- Safer, smaller Maya image -->
                                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/PayMaya_Logo.png/320px-PayMaya_Logo.png" alt="Maya Logo" class="payment-logo">
                                 <span>Maya</span>
                             </label>
                         </div>
-                        <!-- Bank Transfer -->
                         <div class="col-6 col-md-3">
                             <input type="radio" name="payment_method" id="bdo" value="Bank Transfer" class="d-none">
                             <label for="bdo" class="payment-card">
@@ -159,7 +152,6 @@
                                 <span>Bank Transfer</span>
                             </label>
                         </div>
-                        <!-- PayPal -->
                         <div class="col-6 col-md-3">
                             <input type="radio" name="payment_method" id="paypal" value="PayPal" class="d-none">
                             <label for="paypal" class="payment-card">
@@ -254,33 +246,32 @@
 
             const formData = new FormData(form);
 
-            // API 1: Send to Web3Forms (Saves to your Dashboard Database - Works Perfectly)
+            // API 1: Send to Web3Forms (Saves to your Dashboard Database)
             const requestWeb3Forms = fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
                 body: formData
             });
 
-            // Convert FormData to JSON specifically for FormSubmit to force the Auto-Responder
-            const formJSON = {};
-            formData.forEach((value, key) => { formJSON[key] = value });
+            // FIX: Convert FormData into URL Encoded string so FormSubmit perfectly mimics a standard browser form submission
+            const urlEncodedData = new URLSearchParams(formData).toString();
 
-            // API 2: Send to FormSubmit (Triggers the Auto-Reply to the Customer)
+            // API 2: Send to FormSubmit (Triggers Auto-Responder to customer's email)
             const requestFormSubmit = fetch('https://formsubmit.co/ajax/matthewpedregosa@gmail.com', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/x-www-form-urlencoded',
                     'Accept': 'application/json' 
                 },
-                body: JSON.stringify(formJSON)
+                body: urlEncodedData
             });
 
-            // Run BOTH requests at the exact same time
+            // Run BOTH requests concurrently
             Promise.all([requestWeb3Forms, requestFormSubmit])
             .then(async ([response1, response2]) => {
-                // As long as Web3Forms (Database) succeeds, we consider it a win
+                // If Web3Forms succeeds, we consider the transaction logged.
                 if (response1.status === 200) {
-                    toast.show(); // Show success popup at the bottom (Requirement #2)
-                    form.reset(); // Clear the form
+                    toast.show(); // Show green popup toast
+                    form.reset(); // Clear the form fields
                     
                     // Redirect to home after 4 seconds
                     setTimeout(() => {
