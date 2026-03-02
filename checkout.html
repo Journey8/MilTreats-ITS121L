@@ -262,8 +262,12 @@
 
             // API 2: Send to FormSubmit (Triggers the Auto-Reply to the Customer)
             // Make sure to use your actual email here
+            // API 2: Send to FormSubmit (Triggers the Auto-Reply to the Customer)
             const requestFormSubmit = fetch('https://formsubmit.co/ajax/matthewpedregosa@gmail.com', {
                 method: 'POST',
+                headers: {
+                    'Accept': 'application/json' // CRITICAL for FormSubmit AJAX
+                },
                 body: formData
             });
 
